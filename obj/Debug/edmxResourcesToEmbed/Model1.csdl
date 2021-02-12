@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbOgrenciOtomasyonuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bolumlers">
+    <Key>
+      <PropertyRef Name="bolumid" />
+    </Key>
+    <Property Name="bolumid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bolumad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Siniflars" Relationship="Self.FK_dbo_Siniflars_dbo_Bolumlers_Bolumler_bolumid" FromRole="Bolumlers" ToRole="Siniflars" />
+  </EntityType>
+  <EntityType Name="Ogrencilers">
+    <Key>
+      <PropertyRef Name="ogrid" />
+    </Key>
+    <Property Name="ogrid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ograd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ogrsoyad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Siniflar_sinifid" Type="Int32" />
+    <NavigationProperty Name="Siniflars" Relationship="Self.FK_dbo_Ogrencilers_dbo_Siniflars_Siniflar_sinifid" FromRole="Ogrencilers" ToRole="Siniflars" />
+  </EntityType>
+  <EntityType Name="Siniflars">
+    <Key>
+      <PropertyRef Name="sinifid" />
+    </Key>
+    <Property Name="sinifid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sinifad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Bolumler_bolumid" Type="Int32" />
+    <NavigationProperty Name="Bolumlers" Relationship="Self.FK_dbo_Siniflars_dbo_Bolumlers_Bolumler_bolumid" FromRole="Siniflars" ToRole="Bolumlers" />
+    <NavigationProperty Name="Ogrencilers" Relationship="Self.FK_dbo_Ogrencilers_dbo_Siniflars_Siniflar_sinifid" FromRole="Siniflars" ToRole="Ogrencilers" />
+  </EntityType>
+  <Association Name="FK_dbo_Siniflars_dbo_Bolumlers_Bolumler_bolumid">
+    <End Role="Bolumlers" Type="Self.Bolumlers" Multiplicity="0..1" />
+    <End Role="Siniflars" Type="Self.Siniflars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bolumlers">
+        <PropertyRef Name="bolumid" />
+      </Principal>
+      <Dependent Role="Siniflars">
+        <PropertyRef Name="Bolumler_bolumid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Ogrencilers_dbo_Siniflars_Siniflar_sinifid">
+    <End Role="Siniflars" Type="Self.Siniflars" Multiplicity="0..1" />
+    <End Role="Ogrencilers" Type="Self.Ogrencilers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Siniflars">
+        <PropertyRef Name="sinifid" />
+      </Principal>
+      <Dependent Role="Ogrencilers">
+        <PropertyRef Name="Siniflar_sinifid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbOgrenciOtomasyonuEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bolumlers" EntityType="Self.Bolumlers" />
+    <EntitySet Name="Ogrencilers" EntityType="Self.Ogrencilers" />
+    <EntitySet Name="Siniflars" EntityType="Self.Siniflars" />
+    <AssociationSet Name="FK_dbo_Siniflars_dbo_Bolumlers_Bolumler_bolumid" Association="Self.FK_dbo_Siniflars_dbo_Bolumlers_Bolumler_bolumid">
+      <End Role="Bolumlers" EntitySet="Bolumlers" />
+      <End Role="Siniflars" EntitySet="Siniflars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Ogrencilers_dbo_Siniflars_Siniflar_sinifid" Association="Self.FK_dbo_Ogrencilers_dbo_Siniflars_Siniflar_sinifid">
+      <End Role="Siniflars" EntitySet="Siniflars" />
+      <End Role="Ogrencilers" EntitySet="Ogrencilers" />
+    </AssociationSet>
+    <EntitySet Name="Kullanicilars" EntityType="DbOgrenciOtomasyonuModel.Kullanicilars" />
+  </EntityContainer>
+  <EntityType Name="Kullanicilars">
+    <Key>
+      <PropertyRef Name="kullaniciadi" />
+    </Key>
+    <Property Name="kullaniciadi" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="parola" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="guvenliksorusu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

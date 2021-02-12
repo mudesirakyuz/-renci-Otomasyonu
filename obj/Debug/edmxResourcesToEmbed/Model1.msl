@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbOgrenciOtomasyonuModelStoreContainer" CdmEntityContainer="DbOgrenciOtomasyonuEntities">
+    <EntitySetMapping Name="Bolumlers">
+      <EntityTypeMapping TypeName="DbOgrenciOtomasyonuModel.Bolumlers">
+        <MappingFragment StoreEntitySet="Bolumlers">
+          <ScalarProperty Name="bolumid" ColumnName="bolumid" />
+          <ScalarProperty Name="bolumad" ColumnName="bolumad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ogrencilers">
+      <EntityTypeMapping TypeName="DbOgrenciOtomasyonuModel.Ogrencilers">
+        <MappingFragment StoreEntitySet="Ogrencilers">
+          <ScalarProperty Name="ogrid" ColumnName="ogrid" />
+          <ScalarProperty Name="ograd" ColumnName="ograd" />
+          <ScalarProperty Name="ogrsoyad" ColumnName="ogrsoyad" />
+          <ScalarProperty Name="Siniflar_sinifid" ColumnName="Siniflar_sinifid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Siniflars">
+      <EntityTypeMapping TypeName="DbOgrenciOtomasyonuModel.Siniflars">
+        <MappingFragment StoreEntitySet="Siniflars">
+          <ScalarProperty Name="sinifid" ColumnName="sinifid" />
+          <ScalarProperty Name="sinifad" ColumnName="sinifad" />
+          <ScalarProperty Name="Bolumler_bolumid" ColumnName="Bolumler_bolumid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanicilars">
+      <EntityTypeMapping TypeName="DbOgrenciOtomasyonuModel.Kullanicilars">
+        <MappingFragment StoreEntitySet="Kullanicilars">
+          <ScalarProperty Name="guvenliksorusu" ColumnName="guvenliksorusu" />
+          <ScalarProperty Name="parola" ColumnName="parola" />
+          <ScalarProperty Name="kullaniciadi" ColumnName="kullaniciadi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
