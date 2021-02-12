@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="640d3e3a8531495d8474a63da07d80c9" Name="Diagram1">
+        <EntityTypeShape EntityType="DbOgrenciOtomasyonuModel.Bolumlers" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOgrenciOtomasyonuModel.Ogrencilers" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOgrenciOtomasyonuModel.Siniflars" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="DbOgrenciOtomasyonuModel.FK_dbo_Siniflars_dbo_Bolumlers_Bolumler_bolumid" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOgrenciOtomasyonuModel.FK_dbo_Ogrencilers_dbo_Siniflars_Siniflar_sinifid" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DbOgrenciOtomasyonuModel.Kullanicilars" Width="1.5" PointX="0.75" PointY="3" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
