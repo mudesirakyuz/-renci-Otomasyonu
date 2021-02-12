@@ -1,4 +1,4 @@
-# -renci-Otomasyonu
+# Ogrenci-Otomasyonu
 Meslek Lisesi Öğrenci Otomasyonu
 
 
