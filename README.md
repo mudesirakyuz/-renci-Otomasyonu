@@ -1,10 +1,7 @@
-# Ogrenci-Otomasyonu
-Meslek Lisesi Öğrenci Otomasyonu
+# Meslek Lisesi Öğrenci Otomasyonu / Vocational High School Student Automation
+## Kullanılanlar / Used Ones
 
-
----KULLANILANLAR---
-
-- ENTITY FRAMEWORK
-- CODE FIRST
-- DB FIRST
-- LINQ
+- `ENTITY FRAMEWORK`
+- `CODE FIRST`
+- `DB FIRST`
+- `LINQ`
